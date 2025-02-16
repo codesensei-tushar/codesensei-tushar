@@ -16,7 +16,7 @@
 - Web applications & automation tools  
 
 ## 📫 How to reach me  
-- 🔗 [LinkedIn](linkedin.com/in/tushar-umbarkar-b0b65633a)
+- 🔗 [LinkedIn]([linkedin.com/in/tushar-umbarkar-b0b65633a](https://www.linkedin.com/in/tushar-umbarkar-b0b65633a/))
 
 ## 😄 Pronouns:  
 He/Him  
