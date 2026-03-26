@@ -1,0 +1,31 @@
+name: Track Profile Views
+
+on:
+  schedule:
+    - cron: '0 23 * * *'  # runs daily at 11PM UTC
+  workflow_dispatch:       # lets you trigger manually too
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Run logger
+        run: python .github/scripts/log_views.py
+
+      - name: Commit CSV
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add views_log.csv
+          git commit -m "log views $(date '+%Y-%m-%d')" || echo "No changes"
+          git push
